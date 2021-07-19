@@ -5,13 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section>
-      <img src="assets/bg.png" id='bg' alt=bg"">
+      <img src="assets/bg.jpg" id='bg' alt=bg"">
       <img src="assets/moon.png" id="moon" alt="moon" />
       <img src="assets/mountain.png" id="mountain" alt="mountain" />
-      <img src="assets/lake.png" id="" alt="lake" />
+      <img src="assets/lake.png" id="lake" alt="lake" />
+      <h2 id="text">NARC2SS</h2>
     </section>
+    <script>
+      let bg = document.querySelector('#bg');
+      let moon = document.querySelector('#moon');
+      let mountain = document.querySelector('#mountain');
+      let road = document.querySelector('#road');
+      let text = document.querySelector('#text');
+
+      window.addEventListener('scroll', () => {
+        let value = window.scrollY;
+
+        bg.style.top = `${value * 0.5}px`;
+        moon.style.left = `${value * 0.5}px`;
+        mountain.style.top = `${-value * 0.15}px`;
+        lake.style.top = `${value * 0.15}px`;
+        text.style.top = `${value * 3}px`;
+        text.style.transition = '.5s';
+      });
+    </script>
   </body>
 </html>
